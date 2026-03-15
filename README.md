@@ -81,3 +81,49 @@ The script:
 - Creates a comparison plot showing mean bias scores with confidence intervals for analysed datasets
 - Mark statistically significant differences with asterisks
 - Saves the combined visualisations as ```bias_comparison``` to ```all excel files/graphs/```
+
+## Output Format
+### Analogy Evaluation Sheet Columns
+- ```A, B, C```: Input words of the analogy
+- ```Predicted```: Top prediction from the model
+- ```Expected```: Correct answer
+- ```TopScore```: Cosine similarity score of the top prediction
+- ```Expected_Rank```: Rank of correct answer in top 10 results
+- ```Correct_Top1/5/10```: Boolean accuracy indicators
+- ```Sim_to_Male/Female/Man/Woman/Boy/Girl```: Individual similarity scores
+- ```Avg_Male_Group/Female_Group```: Average similarities
+- ```Gender_Bias_Score```: Computed bias score [Avg_Male_Group - Avg_Female_Group] (postive = male biased, negative = female biased)
+
+### Word List Evaluation Sheet Columns
+- ```Word```: Word/Phrase being analysed
+- ```Sim_to_Male/Female/Man/Woman/Boy/Girl```
+- ```Avg_Male_Group/Female_Group```
+- ```Gender_Bias_Score```
+
+### Summary Statistics
+- Total number of analysed items
+- Mean Bias Score
+- Standard Deviation
+- 95% Confidence Intervals
+- Percentage of male/female leaning words
+- Percentage of strongly biased words (|bias| ≥ 0.1)
+
+## Understanding the Results
+- Gender Bias Score: Calculated as **Avg_Male_Group - Avg_Female_Group**
+    - Positive Scores: Word is more similar to male associated terms
+    - Negative Scores: Word is more similar to female associated terms
+    - Scores near zero: Relatively neutral
+
+- Statistical Significance:
+    - One sample t-test determines if mean bias differs significantly from zero
+    - Mann-Whitney U test compares bias distributions between models
+    - p < 0.05 indicates statistically significant bias
+
+- Effect Size (Cohen's d):
+    - ~0.2%: Small effect
+    - ~0.5%: Medium effect
+    - ~0.8+%: Large effect
+
+---
+
+**Note**: This tool is designed for research and educational purposes to understand and measure gender bias in word embeddings as part of a final year project for university. Results should be interpreted within the context of the specific models and test sets used.
