@@ -1,0 +1,22 @@
+#Virtual environments
+venv/
+.env/
+BiasFYP/
+
+#Python cache
+__pycache__/
+*.pyc
+
+
+
+#OS files
+.DS_Store
+Thumbs.db
+
+#IDE files
+.vscode/
+.idea/
+
+.md
+
+glove_fast.kv.vectors.npy
