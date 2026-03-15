@@ -21,6 +21,9 @@ The program may take 5-10 minutes to run on the first time (downloading dependen
 git clone https://github.com/JoannaNGG/Gender-Bias-Analysis-in-Word-Embedding-Models.git
 cd Gender-Bias-Analysis-in-Word-Embedding-Models
 ```
+OR
+
+Download as zip
 
 2. Create and activate a Python Virtual Environment
 ```bash
