@@ -17,6 +17,4 @@ Thumbs.db
 .vscode/
 .idea/
 
-.md
-
 glove_fast.kv.vectors.npy
