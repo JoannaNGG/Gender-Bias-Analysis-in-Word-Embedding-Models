@@ -100,9 +100,7 @@ def choose_txt(directory):
                 return os.path.join(directory, txt_files[choice - 1])
 
         print("Invalid choice. Please try again.")
-txt_file = choose_txt(text_dir)
-print(f"\nUsing file: {txt_file}")
-
+        
 #Normalise the word to find match in model
 def normalise_word(word, model):
     for form in [word, word.lower(), word.capitalize(), word.upper()]:
